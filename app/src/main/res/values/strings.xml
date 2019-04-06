@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Aditya_Bhatt</string>
+    <string name="pswait">Please Wait…</string>
+    <string name="tryagain">Try Again Later</string>
+
+    <string name="AlbumList">Album List</string>
+    <string name="photoList">Photo List</string>
+    <string name="photoDetails">Photo Details</string>
+
+</resources>
