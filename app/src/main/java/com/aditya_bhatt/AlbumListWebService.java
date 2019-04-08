@@ -49,7 +49,7 @@ public class AlbumListWebService {
                             albumListModel.setAlbumId(String.valueOf(jsonObject1.getInt("albumId")));
                             int albumId = jsonObject1.getInt("albumId");
                             Log.d("al1", String.valueOf(albumId));
-                            while (j==albumId){
+                            if (j==albumId){
                             Log.d("al2", String.valueOf(albumId));
 
                             AlbumList.albumListModels.add(albumListModel);
