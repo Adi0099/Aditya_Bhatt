@@ -19,11 +19,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+public class AlbumListWebService {
 
-class AlbumListWebService {
-
-
-    static  void albumListWebService(final Activity activity) {
+    public static  void albumListWebService(final Activity activity) {
         // Progress dialog
         AlbumList.albumListModels.clear();
         final ProgressDialog progressDialog;
@@ -44,16 +42,21 @@ class AlbumListWebService {
 
                     JSONArray jsonArray = new JSONArray(response);
                     //now looping through all the elements of the json array
+                    int j = 1;
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        if(jsonArray.getJSONObject(i).getInt("albumId")!=jsonArray.getJSONObject(i+1).getInt("albumId")) {
                             AlbumListModel albumListModel = new AlbumListModel();
-
                             albumListModel.setAlbumId(String.valueOf(jsonObject1.getInt("albumId")));
                             int albumId = jsonObject1.getInt("albumId");
+                            Log.d("al1", String.valueOf(albumId));
+                            while (j==albumId){
+                            Log.d("al2", String.valueOf(albumId));
+
                             AlbumList.albumListModels.add(albumListModel);
                             AlbumList.mAdapter.notifyDataSetChanged();
+                            j++;
                         }
+
 
                     }
 
@@ -80,3 +83,4 @@ class AlbumListWebService {
 
     }
 }
+
